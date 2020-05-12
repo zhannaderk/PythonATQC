@@ -1,6 +1,6 @@
 ## 1. FizzBuzz Interview Question
 
-def fizz_buzz(self, numb):
+def fizz_buzz(numb):
     if int(numb) % 3 == 0 and int(numb) % 5 == 0:
         return "FizzBuzz"
     elif int(numb) % 3 == 0:
@@ -22,14 +22,14 @@ def profit(dict):
 
 # 3. How Many Solutions Does This Quadratic Have?
 
-    def solutions(a, b, c):
-        D = b * b - 4 * a * c
-        if D > 0:
-            return 2
-        elif D == 0:
-            return 1
-        else:
-            return 0
+def solutions(a, b, c):
+    D = b * b - 4 * a * c
+    if D > 0:
+        return 2
+    elif D == 0:
+        return 1
+    else:
+        return 0
 
 ##a = int(input("a:  " ))
 ##b = int(input("b:  " ))
