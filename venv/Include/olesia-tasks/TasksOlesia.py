@@ -71,3 +71,17 @@ def list_of_multiples(num, length):
 ##    print(list_of_multiples(nn,ll))
 ##except:
 ##    print("Invalid value was entered !")
+
+###6. Date Format
+def format_date(date):
+    mdy = date.split("/")
+    if len(mdy) == 3:
+        if mdy[2].isdigit() == True and mdy[1].isdigit() == True and mdy[0].isdigit() == True:
+            if len(str(mdy[2])) == 4 and len(str(mdy[1])) == 2 and len(str(mdy[0])) == 2:
+                return str(mdy[2]) + str(mdy[1]) + str(mdy[0])
+            else: return "Error! Date was entered in invalid format ! "
+        else: return "Error! Invalid value(s) was(were) entered ! "
+    else: return "Error! Date was entered in invalid format hasjkdfhajkdfhalhdfajk! "
+##
+##mmddyy = input("Please enter a Date in MM/DD/YYYY format: ")
+##print("Result in YYYYDDMM format: %s" %(format_date(mmddyy)))

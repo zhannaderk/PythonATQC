@@ -47,6 +47,14 @@ class Test5 (unittest.TestCase):
             self.assertEqual(TasksOlesia.list_of_multiples(12, 10), [12, 24, 36, 48, 60, 72, 84, 96, 108, 120])
             self.assertEqual(TasksOlesia.list_of_multiples(17, 6), [17, 34, 51, 68, 85, 102])
 
+class Test6 (unittest.TestCase):
+    def format_date_test(self):
+        self.assertEqual(TasksOlesia.format_date(11/12/2019), "20191211")
+        self.assertEqual(TasksOlesia.format_date(12/31/2019), "20193112")
+        self.assertEqual(TasksOlesia.format_date(01/15/2019), "20191501")
+
+
+
 if __name__ == '__main__':
     unittest.main()
 
