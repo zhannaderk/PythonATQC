@@ -161,7 +161,7 @@ class ParallelLines:
 class Volume:
     def vol_spher_shell(r1, r2):
         if r1 <= 0:
-            return None
+            return false
         else: v = 4/3*pi*r1**3 - 4/3*pi*r2**3
         return (round(v,3))
 # print(vol_spher_shell(5, 3))
@@ -241,17 +241,75 @@ class Repdigit ():
             else:
                 return False
 
+# 12. Concatenate Variable Number of Input Lists
+# Create a function that concatenates n input lists, where n is variable.
+# Examples
+# concat([1, 2, 3], [4, 5], [6, 7]) ➞ [1, 2, 3, 4, 5, 6, 7]
+
+# concat([1], [2], [3], [4], [5], [6], [7]) ➞ [1, 2, 3, 4, 5, 6, 7]
+
+# concat([1, 2], [3, 4]) ➞ [1, 2, 3, 4]
+
+# concat([4, 4, 4, 4, 4]) ➞ [4, 4, 4, 4, 4]
+# Notes
+# Lists should be concatenated in order of the arguments
+
+class Concatinate():
+    def concatinate (nlist):
+        temp = []
+        for i in range (len(nlist)):
+            temp = temp + nlist(i)
+            return temp
+
+# 13. Emptying the values
+# Given a list of values, return a list with each value replaced with the empty value of the same type. More explicitly:
+#replace integers (e.g. 1, 3), whose type is "int", with 0
+#replace floats (e.g. 3.14, 2.17), whose type is "float", with 0.0
+#replace strings (e.g. 'abcde', 'x'), whose type is "str", with ''
+#replace booleans (True, False), whose type is "bool", with False
+#replace lists (e.g. [1, 'a', 5], [[4]]), whose type is "list", with []
+#replace tuples (e.g. (1,9,0), (2,)), whose type is "tuple", with ()
+#replace sets (e.g. {0,'a'}, {'b'}), whose type is "set", with set() (caution: python interprets {} as the empty dictionary, not the empty set)
+#None, whose type is "NoneType", is preserved as None
+
+# Examples
+#[1, 2, 3] ➞ [0, 0, 0]
+
+#[7, 3.14, 'cat'] ➞ [0, 0.0, '']
+
+#[[1, 2, 3], (1,2,3), {1,2,3}] ➞ [[], (), set()]
+
+#[[7, 3.14, 'cat']] ➞ [[]]
+
+#[None] ➞ [None]
+# Notes
+#None has the special "NoneType" all for itself.
+
+class Emptying:
+    types = {
+    int: 0,
+    float: 0.0,
+    str: '',
+    list: [],
+    tuple: (),
+    set: set(),
+    None: None
+    }
+
+def replace_value(val):
+    return types.get(type(val))
 
 
+def replace(arr):
+    new_arr = []
+    for e in arr:
+        new_arr.append(replace_value(e))
+    return new_arr
 
 
-
-
-
-
-
-
-
-
-
+    print(Emtying().replace([1, 2, 3]))
+    print(Emtying().replace([7, 3.14, 'cat']))
+    print(Emtying().replace([[1, 2, 3], (1, 2, 3), {1, 2, 3}]))
+    print(Emtying().replace([[7, 3.14, 'cat']]))
+    print(Emtying().replace([None]))
 
